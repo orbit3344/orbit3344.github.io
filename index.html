@@ -1,0 +1,1659 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麻豆不打烊_原创影像社区_持续更新的内容品牌</title>
+<meta name="description" content="麻豆不打烊官方网站，专注城市生活影像与原创短片的内容品牌，汇聚创作者社区，深耕品质内容生态，记录真实温暖的日常与故事。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2322293a'/%3E%3Ccircle cx='32' cy='32' r='16' fill='none' stroke='%23ff7a45' stroke-width='3'/%3E%3Cpath d='M28 25l14 7-14 7z' fill='%23ffd166'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --md-night:#171c26;
+    --md-night-2:#1f2635;
+    --md-night-3:#262f42;
+    --md-amber:#ff7a45;
+    --md-amber-soft:#ffb08f;
+    --md-gold:#ffd166;
+    --md-mint:#5fd3b3;
+    --md-ink:#e9edf5;
+    --md-ink-soft:#aab4c8;
+    --md-line:rgba(233,237,245,.12);
+    --md-cream:#f6f3ec;
+    --md-radius:18px;
+    --md-shadow:0 18px 44px rgba(6,9,16,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+    background:var(--md-night);
+    color:var(--md-ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;}
+  ul{list-style:none;}
+  .md-wrap{width:min(1180px,92vw);margin:0 auto;}
+  .md-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);}
+
+  /* ====== 吸顶公告 + 页头 ====== */
+  .md-sticky{position:sticky;top:0;z-index:60;background:rgba(23,28,38,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--md-line);}
+  .md-notice{
+    display:flex;align-items:center;gap:14px;
+    background:linear-gradient(90deg,#2b2033,#33231f 55%,#1f2635);
+    border-bottom:1px solid rgba(255,122,69,.28);
+    padding:9px 0;font-size:13.5px;color:var(--md-amber-soft);
+  }
+  .md-notice-tag{
+    flex:none;background:var(--md-amber);color:#241206;font-weight:700;
+    font-size:12px;letter-spacing:.08em;padding:2px 9px;border-radius:6px;
+  }
+  .md-notice-track{overflow:hidden;white-space:nowrap;flex:1;}
+  .md-notice-track span{display:inline-block;padding-right:38px;animation:md-marquee 26s linear infinite;}
+  @keyframes md-marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  .md-header{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:14px 0;}
+  .md-brand{display:flex;align-items:center;gap:12px;flex:none;}
+  .md-brand-mark{
+    width:42px;height:42px;border-radius:12px;flex:none;
+    background:radial-gradient(circle at 30% 25%,#ff9a6b,#ff7a45 45%,#a3411d);
+    display:grid;place-items:center;box-shadow:0 6px 18px rgba(255,122,69,.35);
+  }
+  .md-brand-mark svg{width:20px;height:20px;}
+  .md-brand-name{font-size:19px;font-weight:800;letter-spacing:.04em;}
+  .md-brand-sub{font-size:11px;color:var(--md-ink-soft);letter-spacing:.22em;text-transform:uppercase;}
+
+  .md-nav{display:flex;align-items:center;gap:4px;flex:1;justify-content:center;}
+  .md-nav a{
+    font-size:14.5px;color:var(--md-ink-soft);padding:8px 13px;border-radius:9px;
+    transition:color .2s,background .2s;white-space:nowrap;
+  }
+  .md-nav a:hover{color:var(--md-gold);background:rgba(255,209,102,.08);}
+
+  .md-head-tools{display:flex;align-items:center;gap:10px;flex:none;}
+  .md-search{position:relative;display:flex;align-items:center;}
+  .md-search input{
+    width:170px;background:var(--md-night-2);border:1px solid var(--md-line);
+    border-radius:999px;padding:8px 14px 8px 34px;color:var(--md-ink);font-size:13.5px;
+    transition:width .25s,border-color .25s;
+  }
+  .md-search input:focus{outline:none;border-color:var(--md-amber);width:210px;}
+  .md-search-ico{position:absolute;left:12px;width:14px;height:14px;opacity:.6;pointer-events:none;}
+  .md-search-hint{
+    position:absolute;top:calc(100% + 8px);left:0;right:0;background:var(--md-night-3);
+    border:1px solid var(--md-line);border-radius:12px;padding:8px;font-size:13px;
+    color:var(--md-ink-soft);display:none;box-shadow:var(--md-shadow);z-index:70;
+  }
+  .md-search-hint.on{display:block;}
+  .md-search-hint b{color:var(--md-gold);}
+  .md-btn{
+    display:inline-flex;align-items:center;gap:7px;border-radius:999px;
+    padding:9px 18px;font-size:14px;font-weight:600;transition:transform .18s,box-shadow .2s,background .2s;
+  }
+  .md-btn-amber{background:var(--md-amber);color:#241206;}
+  .md-btn-amber:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(255,122,69,.35);}
+  .md-btn-ghost{border:1px solid var(--md-line);color:var(--md-ink);}
+  .md-btn-ghost:hover{border-color:var(--md-gold);color:var(--md-gold);}
+  .md-burger{display:none;width:42px;height:42px;border:1px solid var(--md-line);border-radius:11px;place-items:center;}
+  .md-burger span{display:block;width:18px;height:2px;background:var(--md-ink);position:relative;}
+  .md-burger span::before,.md-burger span::after{content:"";position:absolute;left:0;width:18px;height:2px;background:var(--md-ink);}
+  .md-burger span::before{top:-6px;}.md-burger span::after{top:6px;}
+  .md-mobile-nav{display:none;padding:6px 0 16px;}
+  .md-mobile-nav.on{display:block;}
+  .md-mobile-nav a{display:block;padding:11px 4px;border-bottom:1px solid var(--md-line);color:var(--md-ink-soft);font-size:15px;}
+  .md-mobile-nav a:last-child{border-bottom:none;}
+
+  /* ====== 首屏 ====== */
+  .md-hero{position:relative;overflow:hidden;padding:64px 0 72px;border-bottom:1px solid var(--md-line);}
+  .md-hero::before{
+    content:"";position:absolute;inset:-20% -10% auto auto;width:640px;height:640px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,122,69,.22),transparent 62%);filter:blur(8px);
+  }
+  .md-hero::after{
+    content:"";position:absolute;left:-16%;bottom:-30%;width:560px;height:560px;border-radius:50%;
+    background:radial-gradient(circle,rgba(95,211,179,.14),transparent 64%);
+  }
+  .md-hero-inner{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;}
+  .md-hero-kicker{
+    display:inline-flex;align-items:center;gap:9px;font-size:12.5px;letter-spacing:.24em;
+    color:var(--md-mint);border:1px solid rgba(95,211,179,.34);padding:5px 13px;border-radius:999px;margin-bottom:20px;
+  }
+  .md-hero-kicker i{width:6px;height:6px;border-radius:50%;background:var(--md-mint);}
+  .md-hero h1{font-size:clamp(38px,5.4vw,58px);line-height:1.15;letter-spacing:.02em;font-weight:900;}
+  .md-hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--md-gold),var(--md-amber) 60%,#ff5f7a);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .md-hero-lead{margin-top:18px;font-size:16.5px;color:var(--md-ink-soft);max-width:34em;}
+  .md-hero-desc{margin-top:14px;font-size:14.5px;color:#98a2b7;max-width:34em;}
+  .md-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;}
+  .md-hero-stats{display:flex;flex-wrap:wrap;gap:34px;margin-top:38px;padding-top:26px;border-top:1px solid var(--md-line);}
+  .md-hero-stat strong{display:block;font-size:26px;font-weight:800;color:var(--md-gold);letter-spacing:.02em;}
+  .md-hero-stat span{font-size:12.5px;color:var(--md-ink-soft);}
+
+  .md-hero-visual{position:relative;}
+  .md-hero-frame{
+    border-radius:24px;overflow:hidden;border:1px solid rgba(255,122,69,.28);
+    box-shadow:0 30px 70px rgba(0,0,0,.55);transform:rotate(-1.2deg);
+    transition:transform .4s;
+  }
+  .md-hero-frame:hover{transform:rotate(0deg) translateY(-4px);}
+  .md-hero-badge{
+    position:absolute;right:-10px;bottom:-18px;background:var(--md-cream);color:#1d2230;
+    border-radius:16px;padding:12px 18px;font-size:13px;font-weight:700;line-height:1.5;
+    box-shadow:0 14px 30px rgba(0,0,0,.4);display:flex;align-items:center;gap:10px;
+  }
+  .md-hero-badge b{color:#c4511f;font-size:20px;}
+  .md-hero-badge small{display:block;font-weight:500;color:#6b6154;font-size:11.5px;}
+
+  /* ====== 通用 section ====== */
+  .md-section{padding:76px 0;border-bottom:1px solid var(--md-line);}
+  .md-section:last-of-type{border-bottom:none;}
+  .md-sec-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:38px;flex-wrap:wrap;}
+  .md-sec-head h2{font-size:clamp(25px,3.2vw,32px);font-weight:800;letter-spacing:.02em;line-height:1.25;}
+  .md-sec-head h2 span{color:var(--md-amber);}
+  .md-sec-head p{font-size:14px;color:var(--md-ink-soft);margin-top:9px;max-width:48em;}
+  .md-sec-link{font-size:13.5px;color:var(--md-gold);border-bottom:1px dashed rgba(255,209,102,.45);padding-bottom:2px;}
+
+  .md-tag{
+    display:inline-block;font-size:12px;padding:3px 10px;border-radius:999px;
+    background:rgba(255,122,69,.14);color:var(--md-amber-soft);border:1px solid rgba(255,122,69,.25);
+  }
+  .md-tag-mint{background:rgba(95,211,179,.12);color:var(--md-mint);border-color:rgba(95,211,179,.28);}
+  .md-tag-gold{background:rgba(255,209,102,.12);color:var(--md-gold);border-color:rgba(255,209,102,.3);}
+
+  /* ====== 精选视频卡 ====== */
+  .md-feature-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:24px;}
+  .md-vcard{
+    position:relative;border-radius:var(--md-radius);overflow:hidden;background:var(--md-night-2);
+    border:1px solid var(--md-line);transition:transform .28s,border-color .28s,box-shadow .28s;
+  }
+  .md-vcard:hover{transform:translateY(-5px);border-color:rgba(255,122,69,.4);box-shadow:var(--md-shadow);}
+  .md-vcard-cover{position:relative;aspect-ratio:16/9;overflow:hidden;}
+  .md-vcard-cover svg{width:100%;height:100%;}
+  .md-vcard-cover::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(to top,rgba(10,13,20,.78),rgba(10,13,20,.05) 52%,transparent);
+  }
+  .md-play{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:54px;height:54px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(255,209,102,.92);color:#241206;z-index:3;
+    box-shadow:0 8px 24px rgba(0,0,0,.45);transition:transform .25s,background .25s;
+  }
+  .md-play svg{width:18px;height:18px;margin-left:3px;}
+  .md-vcard:hover .md-play{transform:translate(-50%,-50%) scale(1.1);background:var(--md-amber);}
+  .md-vcard-cover .md-tag{position:absolute;left:14px;top:14px;z-index:4;backdrop-filter:blur(4px);}
+  .md-vcard-duration{
+    position:absolute;right:12px;top:14px;z-index:4;font-size:12px;background:rgba(10,13,20,.72);
+    padding:2px 8px;border-radius:6px;color:#dfe5ef;
+  }
+  .md-vcard-body{padding:18px 20px 20px;}
+  .md-vcard-body h3{font-size:17px;font-weight:700;line-height:1.45;}
+  .md-vcard-body p{font-size:13.5px;color:var(--md-ink-soft);margin-top:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .md-vcard-meta{display:flex;align-items:center;gap:10px;margin-top:14px;font-size:12.5px;color:#8b96ab;flex-wrap:wrap;}
+  .md-avatar{
+    width:26px;height:26px;border-radius:50%;display:grid;place-items:center;flex:none;
+    font-size:12px;font-weight:700;color:#1b1410;background:var(--md-gold);
+  }
+  .md-avatar-mint{background:var(--md-mint);color:#08201a;}
+  .md-avatar-rose{background:#ff9db0;color:#3a1019;}
+  .md-avatar-sky{background:#8fc6ff;color:#0d1f33;}
+  .md-avatar-lilac{background:#c4b0ff;color:#1e1433;}
+
+  .md-feature-side{display:grid;gap:16px;align-content:start;}
+  .md-vmini{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:12px;background:var(--md-night-2);border:1px solid var(--md-line);border-radius:14px;transition:border-color .25s,transform .25s;}
+  .md-vmini:hover{border-color:rgba(255,209,102,.4);transform:translateX(4px);}
+  .md-vmini-cover{border-radius:10px;overflow:hidden;aspect-ratio:16/9;position:relative;}
+  .md-vmini-cover svg{width:100%;height:100%;}
+  .md-vmini-body h4{font-size:14.5px;font-weight:700;line-height:1.4;}
+  .md-vmini-body span{display:block;font-size:12px;color:#8b96ab;margin-top:7px;}
+  .md-vmini-body .md-tag{margin-top:8px;}
+
+  /* ====== 热门视频流 ====== */
+  .md-filter-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px;}
+  .md-chip{
+    font-size:13px;padding:6px 14px;border-radius:999px;border:1px solid var(--md-line);
+    color:var(--md-ink-soft);transition:all .2s;
+  }
+  .md-chip:hover{border-color:var(--md-amber);color:var(--md-amber-soft);}
+  .md-chip.on{background:var(--md-amber);color:#241206;border-color:var(--md-amber);font-weight:700;}
+  .md-video-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .md-video-flow .md-vcard-body h3{font-size:16px;}
+  .md-card-actions{display:flex;align-items:center;gap:14px;margin-top:15px;padding-top:13px;border-top:1px solid var(--md-line);font-size:12.5px;color:#8b96ab;}
+  .md-act{display:inline-flex;align-items:center;gap:5px;transition:color .2s;}
+  .md-act:hover{color:var(--md-gold);}
+  .md-act svg{width:15px;height:15px;}
+  .md-act.on{color:var(--md-amber);}
+  .md-act.on svg{fill:var(--md-amber);}
+  .md-act-save.on svg{fill:#ff7a9c;stroke:#ff7a9c;color:#ff7a9c;}
+
+  /* ====== 专题企划 ====== */
+  .md-topic-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+  .md-topic{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--md-line);aspect-ratio:3/4;transition:transform .28s;}
+  .md-topic:hover{transform:translateY(-6px);}
+  .md-topic svg{position:absolute;inset:0;width:100%;height:100%;}
+  .md-topic-inner{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding:20px;background:linear-gradient(to top,rgba(9,12,18,.9),rgba(9,12,18,.12) 62%,transparent);}
+  .md-topic-inner h3{font-size:16.5px;font-weight:800;line-height:1.4;}
+  .md-topic-inner p{font-size:12.5px;color:#c3cbda;margin-top:8px;line-height:1.6;}
+  .md-topic-state{display:inline-flex;margin-top:12px;font-size:11.5px;padding:3px 10px;border-radius:999px;background:rgba(255,122,69,.2);color:var(--md-amber-soft);border:1px solid rgba(255,122,69,.3);width:fit-content;}
+
+  /* ====== 创作者矩阵 ====== */
+  .md-creator-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+  .md-creator{
+    display:flex;gap:16px;padding:20px;border-radius:16px;background:var(--md-night-2);
+    border:1px solid var(--md-line);transition:border-color .25s,transform .25s;
+  }
+  .md-creator:hover{border-color:rgba(95,211,179,.45);transform:translateY(-4px);}
+  .md-creator-avatar{
+    width:56px;height:56px;border-radius:16px;flex:none;display:grid;place-items:center;
+    font-size:20px;font-weight:800;color:#141018;
+  }
+  .md-creator-info h3{font-size:16px;font-weight:700;}
+  .md-creator-info .md-field{font-size:12px;color:var(--md-mint);margin-top:3px;}
+  .md-creator-info p{font-size:13px;color:var(--md-ink-soft);margin-top:9px;line-height:1.65;}
+  .md-creator-nums{display:flex;gap:16px;margin-top:11px;font-size:12px;color:#8b96ab;}
+  .md-creator-nums b{color:var(--md-gold);font-size:13px;margin-right:3px;}
+  .md-creator-more{font-size:12.5px;color:var(--md-amber-soft);margin-top:10px;display:inline-block;border-bottom:1px dashed rgba(255,122,69,.4);}
+
+  /* ====== 深度解析文本区 ====== */
+  .md-deep{
+    display:grid;grid-template-columns:1fr 1fr;gap:42px;
+    background:linear-gradient(160deg,rgba(38,47,66,.6),rgba(23,28,38,.2));
+    border:1px solid var(--md-line);border-radius:22px;padding:44px;
+  }
+  .md-deep h2{font-size:27px;font-weight:800;line-height:1.3;}
+  .md-deep h2 span{color:var(--md-mint);}
+  .md-deep p{font-size:14.5px;color:var(--md-ink-soft);margin-top:16px;line-height:1.9;}
+  .md-deep p b{color:var(--md-gold);font-weight:700;}
+  .md-deep-list{display:grid;gap:14px;align-content:start;}
+  .md-deep-item{display:grid;grid-template-columns:34px 1fr;gap:13px;padding:15px 17px;background:rgba(23,28,38,.6);border:1px solid var(--md-line);border-radius:13px;}
+  .md-deep-item i{
+    width:34px;height:34px;border-radius:10px;display:grid;place-items:center;font-style:normal;
+    font-size:14px;font-weight:800;background:rgba(255,209,102,.14);color:var(--md-gold);
+  }
+  .md-deep-item h3{font-size:14.5px;font-weight:700;}
+  .md-deep-item p{margin-top:5px;font-size:13px;line-height:1.65;}
+
+  /* ====== 影像墙 ====== */
+  .md-wall{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:130px;gap:14px;}
+  .md-wall-item{position:relative;border-radius:13px;overflow:hidden;border:1px solid var(--md-line);}
+  .md-wall-item svg{width:100%;height:100%;}
+  .md-wall-item span{
+    position:absolute;left:0;right:0;bottom:0;padding:22px 12px 9px;font-size:12px;color:#e6ebf4;
+    background:linear-gradient(to top,rgba(9,12,18,.88),transparent);z-index:2;
+  }
+  .md-wall-item.wide{grid-column:span 2;}
+  .md-wall-item.tall{grid-row:span 2;}
+
+  /* ====== 评论 ====== */
+  .md-comment-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .md-comment{
+    padding:20px;border-radius:15px;background:var(--md-night-2);border:1px solid var(--md-line);
+    position:relative;transition:border-color .25s;
+  }
+  .md-comment:hover{border-color:rgba(255,122,69,.35);}
+  .md-comment::before{
+    content:"“";position:absolute;right:18px;top:6px;font-size:44px;line-height:1;color:rgba(255,122,69,.18);font-family:Georgia,serif;
+  }
+  .md-comment-head{display:flex;align-items:center;gap:10px;}
+  .md-comment-head strong{font-size:13.5px;}
+  .md-comment-head small{display:block;font-size:11.5px;color:#7f8a9e;}
+  .md-comment p{font-size:13.5px;color:var(--md-ink-soft);margin-top:12px;line-height:1.75;}
+  .md-comment-foot{margin-top:12px;font-size:11.5px;color:#7f8a9e;display:flex;justify-content:space-between;}
+
+  /* ====== 动态 + 合作 ====== */
+  .md-two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;}
+  .md-timeline{position:relative;padding-left:24px;}
+  .md-timeline::before{content:"";position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--md-amber),rgba(255,122,69,.1));}
+  .md-timeline-item{position:relative;padding-bottom:24px;}
+  .md-timeline-item:last-child{padding-bottom:0;}
+  .md-timeline-item::before{
+    content:"";position:absolute;left:-24px;top:6px;width:10px;height:10px;border-radius:50%;
+    background:var(--md-amber);box-shadow:0 0 0 4px rgba(255,122,69,.14);
+  }
+  .md-timeline-item time{font-size:12px;color:var(--md-gold);letter-spacing:.05em;}
+  .md-timeline-item h3{font-size:15px;font-weight:700;margin-top:5px;}
+  .md-timeline-item p{font-size:13px;color:var(--md-ink-soft);margin-top:6px;line-height:1.7;}
+
+  .md-partners{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;align-content:start;}
+  .md-partner{
+    display:grid;place-items:center;padding:22px 10px;border-radius:13px;border:1px dashed var(--md-line);
+    font-size:13px;color:var(--md-ink-soft);text-align:center;line-height:1.5;transition:all .25s;
+  }
+  .md-partner:hover{border-color:rgba(95,211,179,.5);color:var(--md-mint);background:rgba(95,211,179,.04);}
+  .md-partner b{display:block;font-size:15px;color:var(--md-ink);letter-spacing:.06em;margin-bottom:3px;}
+
+  /* ====== FAQ ====== */
+  .md-faq{display:grid;gap:12px;}
+  .md-faq details{background:var(--md-night-2);border:1px solid var(--md-line);border-radius:13px;padding:0 20px;transition:border-color .2s;}
+  .md-faq details[open]{border-color:rgba(255,209,102,.42);}
+  .md-faq summary{
+    list-style:none;cursor:pointer;padding:17px 0;font-size:15px;font-weight:600;
+    display:flex;align-items:center;justify-content:space-between;gap:14px;
+  }
+  .md-faq summary::-webkit-details-marker{display:none;}
+  .md-faq summary::after{content:"+";font-size:20px;color:var(--md-amber);transition:transform .25s;line-height:1;}
+  .md-faq details[open] summary::after{transform:rotate(45deg);}
+  .md-faq details p{font-size:13.5px;color:var(--md-ink-soft);padding:0 0 18px;line-height:1.8;}
+
+  /* ====== 投稿 / 联系 ====== */
+  .md-join{
+    display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;
+    background:linear-gradient(120deg,#2c2438,#1d2a31 70%);
+    border:1px solid rgba(255,122,69,.22);border-radius:22px;padding:42px;
+  }
+  .md-join h2{font-size:27px;font-weight:800;line-height:1.3;}
+  .md-join h2 span{color:var(--md-gold);}
+  .md-join p{font-size:14px;color:var(--md-ink-soft);margin-top:14px;line-height:1.85;}
+  .md-join-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;}
+  .md-contact-card{background:rgba(23,28,38,.72);border:1px solid var(--md-line);border-radius:16px;padding:24px;}
+  .md-contact-card h3{font-size:15px;font-weight:700;color:var(--md-mint);margin-bottom:14px;letter-spacing:.06em;}
+  .md-contact-card li{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px dashed var(--md-line);font-size:13.5px;color:var(--md-ink-soft);}
+  .md-contact-card li:last-child{border-bottom:none;}
+  .md-contact-card li b{color:var(--md-ink);font-weight:600;}
+
+  /* ====== 页脚 ====== */
+  .md-footer{background:#12161f;border-top:1px solid var(--md-line);padding:54px 0 26px;}
+  .md-footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:34px;}
+  .md-footer h4{font-size:14px;font-weight:700;letter-spacing:.08em;color:var(--md-ink);margin-bottom:16px;}
+  .md-footer p{font-size:13px;color:#7f8a9e;line-height:1.85;}
+  .md-footer li{margin-bottom:9px;}
+  .md-footer li a{font-size:13px;color:#7f8a9e;transition:color .2s;}
+  .md-footer li a:hover{color:var(--md-gold);}
+  .md-footer-bottom{
+    margin-top:38px;padding-top:22px;border-top:1px solid var(--md-line);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12.5px;color:#6b7488;
+  }
+
+  /* ====== 浮层 ====== */
+  .md-toast{
+    position:fixed;left:50%;bottom:34px;transform:translate(-50%,20px);
+    background:var(--md-cream);color:#20242e;padding:11px 22px;border-radius:999px;font-size:13.5px;font-weight:600;
+    box-shadow:0 16px 40px rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:200;
+  }
+  .md-toast.on{opacity:1;transform:translate(-50%,0);}
+  .md-top{
+    position:fixed;right:26px;bottom:28px;width:46px;height:46px;border-radius:50%;
+    background:var(--md-amber);color:#241206;display:grid;place-items:center;
+    box-shadow:0 12px 28px rgba(255,122,69,.4);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:150;
+  }
+  .md-top.on{opacity:1;pointer-events:auto;}
+  .md-top:hover{transform:translateY(-4px);}
+  .md-modal{
+    position:fixed;inset:0;z-index:220;display:none;place-items:center;padding:20px;
+    background:rgba(8,11,17,.78);backdrop-filter:blur(6px);
+  }
+  .md-modal.on{display:grid;}
+  .md-modal-box{
+    width:min(480px,100%);background:var(--md-night-2);border:1px solid var(--md-line);
+    border-radius:18px;padding:28px;box-shadow:var(--md-shadow);
+  }
+  .md-modal-box h3{font-size:19px;font-weight:800;}
+  .md-modal-box p{font-size:13.5px;color:var(--md-ink-soft);margin-top:10px;line-height:1.75;}
+  .md-modal-box .md-form{margin-top:18px;display:grid;gap:11px;}
+  .md-modal-box input,.md-modal-box textarea{
+    width:100%;background:var(--md-night);border:1px solid var(--md-line);border-radius:10px;
+    padding:10px 13px;color:var(--md-ink);font-size:13.5px;font-family:inherit;
+  }
+  .md-modal-box input:focus,.md-modal-box textarea:focus{outline:none;border-color:var(--md-amber);}
+  .md-modal-foot{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;}
+  .md-share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;}
+  .md-share-btn{font-size:13px;padding:9px 15px;border-radius:10px;border:1px solid var(--md-line);color:var(--md-ink-soft);transition:all .2s;}
+  .md-share-btn:hover{border-color:var(--md-gold);color:var(--md-gold);}
+
+  @media (max-width:1024px){
+    .md-hero-inner{grid-template-columns:1fr;gap:36px;}
+    .md-feature-grid{grid-template-columns:1fr;}
+    .md-video-flow{grid-template-columns:repeat(2,1fr);}
+    .md-topic-grid{grid-template-columns:repeat(2,1fr);}
+    .md-creator-grid{grid-template-columns:1fr 1fr;}
+    .md-comment-grid{grid-template-columns:1fr 1fr;}
+    .md-two-col{grid-template-columns:1fr;}
+    .md-footer-top{grid-template-columns:1fr 1fr;}
+    .md-deep{grid-template-columns:1fr;padding:32px;}
+    .md-join{grid-template-columns:1fr;padding:32px;}
+  }
+  @media (max-width:760px){
+    .md-nav{display:none;}
+    .md-burger{display:grid;}
+    .md-search input{width:120px;}
+    .md-search input:focus{width:150px;}
+    .md-hero-stats{gap:22px;}
+    .md-video-flow{grid-template-columns:1fr;}
+    .md-topic-grid{grid-template-columns:1fr;}
+    .md-creator-grid{grid-template-columns:1fr;}
+    .md-comment-grid{grid-template-columns:1fr;}
+    .md-wall{grid-template-columns:repeat(2,1fr);grid-auto-rows:118px;}
+    .md-footer-top{grid-template-columns:1fr;}
+    .md-section{padding:56px 0;}
+    .md-partners{grid-template-columns:1fr 1fr;}
+    .md-hero-badge{right:0;bottom:-14px;padding:9px 13px;font-size:12px;}
+    .md-hero-badge b{font-size:16px;}
+  }
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="md-sticky">
+  <div class="md-notice">
+    <div class="md-wrap" style="display:flex;align-items:center;gap:14px;">
+      <span class="md-notice-tag">今日更新</span>
+      <div class="md-notice-track">
+        <span>「夜行地图」第 7 期上线：老城区凌晨四点的豆浆铺 · 新人创作者招募通道开启，投稿通道持续开放 · 2026 年度影像企划「不打烊的街」专题已释出 12 支作品 · 社区新增「片尾彩蛋」互动玩法，上传作品即可参与本月投票</span>
+      </div>
+    </div>
+  </div>
+  <div class="md-wrap">
+    <header class="md-header">
+      <a class="md-brand" href="#top" aria-label="麻豆不打烊官方网站首页">
+        <span class="md-brand-mark">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#1d1410" stroke-width="2"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#1d1410"/></svg>
+        </span>
+        <span>
+          <span class="md-brand-name">麻豆不打烊</span>
+          <span class="md-brand-sub">MADOU NEVER OFF</span>
+        </span>
+      </a>
+      <nav class="md-nav" aria-label="主导航">
+        <a href="#top">首页</a>
+        <a href="#feature">焦点影像</a>
+        <a href="#topic">专题企划</a>
+        <a href="#creators">创作者</a>
+        <a href="#story">品牌故事</a>
+        <a href="#news">企业动态</a>
+        <a href="#faq">帮助中心</a>
+        <a href="#join">联系我们</a>
+      </nav>
+      <div class="md-head-tools">
+        <div class="md-search">
+          <svg class="md-search-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg>
+          <input id="mdSearchInput" type="search" placeholder="搜索作品 / 创作者" aria-label="站内搜索">
+          <div class="md-search-hint" id="mdSearchHint"></div>
+        </div>
+        <button class="md-btn md-btn-amber" data-open="join" type="button">我要投稿</button>
+        <button class="md-burger" id="mdBurger" type="button" aria-label="展开导航" aria-expanded="false"><span></span></button>
+      </div>
+    </header>
+    <nav class="md-mobile-nav" id="mdMobileNav" aria-label="移动端导航">
+      <a href="#top">首页</a>
+      <a href="#feature">焦点影像</a>
+      <a href="#topic">专题企划</a>
+      <a href="#creators">创作者</a>
+      <a href="#story">品牌故事</a>
+      <a href="#news">企业动态</a>
+      <a href="#faq">帮助中心</a>
+      <a href="#join">联系我们</a>
+    </nav>
+  </div>
+</div>
+
+<main id="top">
+
+  <!-- ============ 首屏 ============ -->
+  <section class="md-hero">
+    <div class="md-wrap md-hero-inner">
+      <div>
+        <span class="md-hero-kicker"><i></i>品牌官方网站 · 持续运营中</span>
+        <h1>麻豆不打烊 <em>影像不停歇</em></h1>
+        <p class="md-hero-lead">一间不打烊的城市影像客厅，把凌晨的街灯、巷口的蒸汽、普通人的分寸感，都收进镜头里。</p>
+        <p class="md-hero-desc">麻豆不打烊是专注城市生活影像的原创内容品牌与视频社区，我们与创作者一起深耕真实、温暖的日常记录，让每一支短片都有被认真对待的机会。</p>
+        <div class="md-hero-actions">
+          <a class="md-btn md-btn-amber" href="#feature">进入焦点影像</a>
+          <a class="md-btn md-btn-ghost" href="#creators">认识创作者</a>
+          <button class="md-btn md-btn-ghost" data-open="share" type="button">分享本站</button>
+        </div>
+        <div class="md-hero-stats">
+          <div class="md-hero-stat"><strong>2,480+</strong><span>原创短片作品</span></div>
+          <div class="md-hero-stat"><strong>376</strong><span>签约与合作创作者</span></div>
+          <div class="md-hero-stat"><strong>1,200万</strong><span>社区月度播放</span></div>
+        </div>
+      </div>
+      <div class="md-hero-visual">
+        <div class="md-hero-frame">
+          <svg viewBox="0 0 640 380" role="img" aria-label="麻豆不打烊品牌主视觉：深夜城市街口与亮着灯的小店">
+            <defs>
+              <linearGradient id="heroSky" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#1b2233"/><stop offset="55%" stop-color="#2c2334"/><stop offset="100%" stop-color="#3d2a2b"/>
+              </linearGradient>
+              <linearGradient id="heroGlow" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#ff7a45" stop-opacity=".85"/><stop offset="1" stop-color="#ff7a45" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="heroRoad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#20293a"/><stop offset="1" stop-color="#12161f"/>
+              </linearGradient>
+            </defs>
+            <rect width="640" height="380" fill="url(#heroSky)"/>
+            <circle cx="520" cy="66" r="26" fill="#ffd166" opacity=".8"/>
+            <circle cx="520" cy="66" r="44" fill="#ffd166" opacity=".14"/>
+            <g fill="#151b28">
+              <rect x="0" y="150" width="118" height="150"/>
+              <rect x="126" y="118" width="86" height="182"/>
+              <rect x="220" y="166" width="72" height="134"/>
+              <rect x="470" y="132" width="96" height="168"/>
+              <rect x="574" y="158" width="66" height="142"/>
+            </g>
+            <g fill="#ffd166" opacity=".75">
+              <rect x="20" y="176" width="12" height="14"/><rect x="46" y="176" width="12" height="14"/>
+              <rect x="72" y="204" width="12" height="14"/><rect x="20" y="232" width="12" height="14"/>
+              <rect x="146" y="150" width="11" height="13"/><rect x="172" y="150" width="11" height="13"/>
+              <rect x="146" y="184" width="11" height="13"/><rect x="184" y="184" width="11" height="13"/>
+              <rect x="492" y="162" width="12" height="14"/><rect x="522" y="162" width="12" height="14"/>
+              <rect x="522" y="198" width="12" height="14"/><rect x="596" y="186" width="10" height="12"/>
+            </g>
+            <rect x="240" y="206" width="130" height="94" rx="4" fill="#2a1d19"/>
+            <rect x="248" y="214" width="114" height="46" fill="#ffb08f" opacity=".55"/>
+            <text x="272" y="246" font-size="20" font-family="sans-serif" fill="#3b1d0c" font-weight="700">不打烊</text>
+            <rect x="240" y="268" width="26" height="32" fill="#3a271f"/>
+            <rect x="344" y="268" width="26" height="32" fill="#3a271f"/>
+            <rect x="0" y="298" width="640" height="82" fill="url(#heroRoad)"/>
+            <rect x="0" y="296" width="640" height="3" fill="#4a3a33"/>
+            <g stroke="#ffd166" stroke-opacity=".55" stroke-width="3" stroke-dasharray="20 26"><path d="M0 356h640"/></g>
+            <path d="M240 300 L370 300 L410 380 L170 380 Z" fill="url(#heroGlow)" opacity=".5"/>
+            <g fill="#0e121b">
+              <circle cx="310" cy="330" r="11"/>
+              <rect x="300" y="340" width="20" height="40" rx="8"/>
+            </g>
+            <circle cx="310" cy="324" r="18" fill="#ff7a45" opacity=".13"/>
+          </svg>
+        </div>
+        <div class="md-hero-badge">
+          <b>24/7</b>
+          <span>社区在线<small>创作者与观众在同一时区相遇</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 焦点影像 ============ -->
+  <section class="md-section" id="feature">
+    <div class="md-wrap">
+      <div class="md-sec-head">
+        <div>
+          <h2>焦点影像 <span>编辑推荐</span></h2>
+          <p>由麻豆不打烊内容团队从本周上传作品中挑选，兼顾画面、叙事与真实的现场质感，呈现平台在原创短片上的品质坚持。</p>
+        </div>
+        <a class="md-sec-link" href="#flow">查看全部作品流</a>
+      </div>
+
+      <div class="md-feature-grid">
+        <article class="md-vcard">
+          <div class="md-vcard-cover">
+            <span class="md-tag">本周焦点</span>
+            <span class="md-vcard-duration">18:42</span>
+            <svg viewBox="0 0 640 360" role="img" aria-label="本周焦点作品封面：凌晨四点的豆浆铺与升腾热气">
+              <defs>
+                <linearGradient id="f1bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a1f30"/><stop offset="1" stop-color="#4a2a20"/></linearGradient>
+                <radialGradient id="f1steam" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffe9cf" stop-opacity=".55"/><stop offset="1" stop-color="#ffe9cf" stop-opacity="0"/></radialGradient>
+              </defs>
+              <rect width="640" height="360" fill="url(#f1bg)"/>
+              <rect x="0" y="252" width="640" height="108" fill="#171219"/>
+              <rect x="96" y="140" width="300" height="120" rx="6" fill="#3a2a26"/>
+              <rect x="108" y="152" width="276" height="46" fill="#ffb08f" opacity=".36"/>
+              <text x="150" y="184" font-family="sans-serif" font-size="24" fill="#ffe4c9" font-weight="700">豆浆 · 现磨</text>
+              <ellipse cx="200" cy="250" rx="120" ry="26" fill="#ffd166" opacity=".2"/>
+              <circle cx="196" cy="238" r="34" fill="url(#f1steam)"/>
+              <circle cx="250" cy="222" r="42" fill="url(#f1steam)"/>
+              <circle cx="308" cy="240" r="30" fill="url(#f1steam)"/>
+              <rect x="440" y="170" width="150" height="180" rx="8" fill="#221a1d"/>
+              <rect x="456" y="190" width="118" height="96" fill="#2f2430"/>
+              <circle cx="515" cy="238" r="27" fill="#ff7a45" opacity=".5"/>
+              <rect x="0" y="330" width="640" height="30" fill="#0f0c11"/>
+            </svg>
+            <span class="md-play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg>
+            </span>
+          </div>
+          <div class="md-vcard-body">
+            <h3>凌晨四点的豆浆铺：一条街醒来的十八分钟</h3>
+            <p>导演跟拍老城区一间开了二十七年的早餐铺，从磨豆、烧浆到第一笼包子出屉。镜头没有旁白，只有油烟、脚步和街灯的换气声，却把一座城市的清晨完整地留了下来。</p>
+            <div class="md-vcard-meta">
+              <span class="md-avatar md-avatar-rose">林</span>
+              <span>林致远</span>
+              <span>·</span><span>夜行地图系列</span>
+              <span>·</span><span>3.2万次播放</span>
+            </div>
+            <div class="md-card-actions">
+              <button class="md-act js-like" data-count="1284" type="button" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.4A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg>
+                <span class="js-like-num">1284</span>
+              </button>
+              <button class="md-act md-act-save js-save" type="button" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg>
+                <span class="js-save-txt">收藏</span>
+              </button>
+              <button class="md-act js-copy" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5h10"/></svg>
+                复制链接
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <div class="md-feature-side">
+          <a class="md-vmini" href="#flow">
+            <div class="md-vmini-cover">
+              <svg viewBox="0 0 320 180" role="img" aria-label="短片封面：雨天公交站台等车的年轻人">
+                <rect width="320" height="180" fill="#1e2a3a"/>
+                <rect x="0" y="120" width="320" height="60" fill="#141c28"/>
+                <g stroke="#7fa7cf" stroke-opacity=".5" stroke-width="1.5"><path d="M40 0l-14 120M96 0L82 120M160 0l-14 120M226 0l-12 120M286 0l-10 120"/></g>
+                <rect x="30" y="46" width="150" height="80" rx="4" fill="#2b3a4d"/>
+                <rect x="44" y="60" width="122" height="42" fill="#8fc6ff" opacity=".24"/>
+                <rect x="212" y="82" width="76" height="66" rx="4" fill="#233040"/>
+                <circle cx="248" cy="112" r="12" fill="#ff9db0" opacity=".7"/>
+                <rect x="240" y="122" width="16" height="26" rx="7" fill="#ff9db0" opacity=".55"/>
+              </svg>
+            </div>
+            <div class="md-vmini-body">
+              <h4>雨停之前，我在公交站台数了三十七个人</h4>
+              <span>苏栖 · 观察记录</span>
+              <span class="md-tag md-tag-mint">生活切片</span>
+            </div>
+          </a>
+          <a class="md-vmini" href="#flow">
+            <div class="md-vmini-cover">
+              <svg viewBox="0 0 320 180" role="img" aria-label="短片封面：手作陶艺拉坯机与旋转泥胎">
+                <rect width="320" height="180" fill="#3a2b22"/>
+                <circle cx="160" cy="96" r="58" fill="#241a14"/>
+                <ellipse cx="160" cy="96" rx="40" ry="14" fill="#8a5c3c"/>
+                <path d="M132 96c0-20 12-34 28-34s28 14 28 34" stroke="#d9a273" stroke-width="7" fill="none"/>
+                <rect x="120" y="118" width="80" height="14" rx="6" fill="#5b4132"/>
+                <g fill="#ffd166" opacity=".5"><circle cx="58" cy="42" r="3"/><circle cx="272" cy="60" r="4"/><circle cx="248" cy="140" r="3"/></g>
+              </svg>
+            </div>
+            <div class="md-vmini-body">
+              <h4>第一次拉坯：把一团泥扶成碗用了六次</h4>
+              <span>陶陶不晚 · 手作DIY</span>
+              <span class="md-tag md-tag-gold">教程干货</span>
+            </div>
+          </a>
+          <a class="md-vmini" href="#flow">
+            <div class="md-vmini-cover">
+              <svg viewBox="0 0 320 180" role="img" aria-label="短片封面：深夜写字楼格子间亮着的屏幕">
+                <rect width="320" height="180" fill="#1b2230"/>
+                <g fill="#263242">
+                  <rect x="20" y="30" width="70" height="120"/><rect x="100" y="18" width="70" height="132"/>
+                  <rect x="180" y="38" width="70" height="112"/><rect x="260" y="26" width="52" height="124"/>
+                </g>
+                <g fill="#ffd166" opacity=".7">
+                  <rect x="34" y="48" width="14" height="10"/><rect x="34" y="70" width="14" height="10"/>
+                  <rect x="114" y="36" width="14" height="10"/><rect x="136" y="58" width="14" height="10"/>
+                  <rect x="194" y="56" width="14" height="10"/><rect x="274" y="44" width="14" height="10"/>
+                </g>
+                <rect x="120" y="110" width="60" height="34" fill="#3c4c60"/>
+                <circle cx="150" cy="100" r="10" fill="#ff9db0" opacity=".8"/>
+              </svg>
+            </div>
+            <div class="md-vmini-body">
+              <h4>加班到十一点，我给自己剪了一支下班片</h4>
+              <span>江野 · 职场日常</span>
+              <span class="md-tag">经验分享</span>
+            </div>
+          </a>
+          <a class="md-vmini" href="#flow">
+            <div class="md-vmini-cover">
+              <svg viewBox="0 0 320 180" role="img" aria-label="短片封面：郊外草地上的露营帐篷与夜景星河">
+                <rect width="320" height="180" fill="#16232c"/>
+                <circle cx="250" cy="38" r="16" fill="#ffd166" opacity=".55"/>
+                <g fill="#dfe7f5" opacity=".8"><circle cx="40" cy="26" r="1.6"/><circle cx="92" cy="52" r="1.4"/><circle cx="176" cy="22" r="1.8"/><circle cx="216" cy="60" r="1.3"/><circle cx="288" cy="46" r="1.5"/></g>
+                <path d="M0 138 Q80 112 160 132 T320 124 V180 H0Z" fill="#1f3a31"/>
+                <path d="M110 138 L150 88 L190 138 Z" fill="#d9a273"/>
+                <path d="M150 88 L150 138" stroke="#8a5c3c" stroke-width="2"/>
+                <circle cx="150" cy="120" r="34" fill="#5fd3b3" opacity=".12"/>
+              </svg>
+            </div>
+            <div class="md-vmini-body">
+              <h4>在城郊过一夜：只带一盏灯和一台旧相机</h4>
+              <span>周见山 · 户外活动</span>
+              <span class="md-tag md-tag-mint">治愈影像</span>
+            </div>
+          </a>
+          <a class="md-vmini" href="#flow">
+            <div class="md-vmini-cover">
+              <svg viewBox="0 0 320 180" role="img" aria-label="短片封面：菜市场里堆叠的番茄与青菜">
+                <rect width="320" height="180" fill="#2b2a1f"/>
+                <rect x="0" y="112" width="320" height="68" fill="#1d1c14"/>
+                <g fill="#ff7a45"><circle cx="66" cy="96" r="18"/><circle cx="96" cy="102" r="15"/><circle cx="52" cy="118" r="13"/></g>
+                <g fill="#5fd3b3"><ellipse cx="176" cy="98" rx="22" ry="15"/><ellipse cx="212" cy="108" rx="18" ry="12"/><ellipse cx="146" cy="116" rx="16" ry="11"/></g>
+                <g fill="#ffd166"><rect x="242" y="84" width="14" height="40" rx="6"/><rect x="264" y="92" width="14" height="32" rx="6"/></g>
+                <rect x="30" y="124" width="270" height="8" rx="4" fill="#4a4433"/>
+              </svg>
+            </div>
+            <div class="md-vmini-body">
+              <h4>菜市场砍价实录：三块钱的快乐也很好</h4>
+              <span>阿栗 · 城市探索</span>
+              <span class="md-tag md-tag-gold">日常记录</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 热门视频流 ============ -->
+  <section class="md-section" id="flow">
+    <div class="md-wrap">
+      <div class="md-sec-head">
+        <div>
+          <h2>社区热门 <span>持续更新中</span></h2>
+          <p>来自麻豆不打烊创作者社区的真实上传作品，覆盖教程、测评、访谈与幕后记录。点击标签可快速筛选，所有内容均为原创或获得正版授权。</p>
+        </div>
+        <a class="md-sec-link" href="#topic">看看专题企划</a>
+      </div>
+
+      <div class="md-filter-row" id="mdFilterRow">
+        <button class="md-chip on" data-filter="all" type="button">全部</button>
+        <button class="md-chip" data-filter="教程" type="button">教程干货</button>
+        <button class="md-chip" data-filter="访谈" type="button">人物访谈</button>
+        <button class="md-chip" data-filter="测评" type="button">深度测评</button>
+        <button class="md-chip" data-filter="幕后" type="button">创作幕后</button>
+        <button class="md-chip" data-filter="城市" type="button">城市探索</button>
+      </div>
+
+      <div class="md-video-flow" id="mdVideoFlow">
+        <article class="md-vcard" data-tag="教程">
+          <div class="md-vcard-cover">
+            <span class="md-tag">教程干货</span><span class="md-vcard-duration">12:06</span>
+            <svg viewBox="0 0 480 270" role="img" aria-label="封面：剪辑软件时间线与色块素材排列">
+              <rect width="480" height="270" fill="#1a2232"/>
+              <rect x="24" y="26" width="180" height="98" rx="6" fill="#2c3a4f"/>
+              <g fill="#ff7a45" opacity=".8"><rect x="34" y="40" width="70" height="9" rx="4"/><rect x="34" y="58" width="120" height="9" rx="4"/><rect x="34" y="76" width="94" height="9" rx="4"/></g>
+              <rect x="224" y="26" width="232" height="98" rx="6" fill="#22304a"/>
+              <g fill="#5fd3b3" opacity=".75"><rect x="236" y="44" width="90" height="62" rx="4"/><rect x="334" y="44" width="110" height="62" rx="4"/></g>
+              <rect x="24" y="146" width="432" height="16" rx="5" fill="#2b394d"/>
+              <g fill="#ffd166" opacity=".85"><rect x="24" y="176" width="96" height="18" rx="4"/><rect x="128" y="176" width="140" height="18" rx="4"/><rect x="276" y="176" width="70" height="18" rx="4"/><rect x="354" y="176" width="102" height="18" rx="4"/></g>
+              <g fill="#ff9db0" opacity=".8"><rect x="24" y="204" width="180" height="16" rx="4"/><rect x="212" y="204" width="120" height="16" rx="4"/><rect x="340" y="204" width="116" height="16" rx="4"/></g>
+              <rect x="0" y="238" width="480" height="32" fill="#141b28"/>
+            </svg>
+            <span class="md-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg></span>
+          </div>
+          <div class="md-vcard-body">
+            <h3>三分钟看懂：一支城市短片是怎么被剪出来的</h3>
+            <p>从素材筛选、节奏点到配乐对齐，拆解作者自己的剪辑流程，适合刚拿起相机的新手。</p>
+            <div class="md-vcard-meta"><span class="md-avatar md-avatar-sky">程</span><span>程一木</span><span>·</span><span>2.1万播放</span></div>
+            <div class="md-card-actions">
+              <button class="md-act js-like" data-count="642" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.4A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg><span class="js-like-num">642</span></button>
+              <button class="md-act md-act-save js-save" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg><span class="js-save-txt">收藏</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="md-vcard" data-tag="访谈">
+          <div class="md-vcard-cover">
+            <span class="md-tag md-tag-mint">人物访谈</span><span class="md-vcard-duration">26:31</span>
+            <svg viewBox="0 0 480 270" role="img" aria-label="封面：两人对坐访谈的剪影与暖色背景">
+              <rect width="480" height="270" fill="#2a2130"/>
+              <circle cx="240" cy="120" r="130" fill="#3d2b3a"/>
+              <g fill="#1c1720">
+                <circle cx="160" cy="118" r="26"/><rect x="132" y="146" width="56" height="80" rx="20"/>
+                <circle cx="320" cy="112" r="26"/><rect x="292" y="140" width="56" height="86" rx="20"/>
+              </g>
+              <g fill="#ff9db0" opacity=".55"><circle cx="160" cy="112" r="10"/><circle cx="320" cy="106" r="10"/></g>
+              <rect x="196" y="196" width="88" height="8" rx="4" fill="#ffd166" opacity=".7"/>
+              <g stroke="#ff7a45" stroke-opacity=".5" stroke-width="2"><circle cx="240" cy="120" r="150" fill="none"/></g>
+            </svg>
+            <span class="md-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg></span>
+          </div>
+          <div class="md-vcard-body">
+            <h3>拍了十年街头，他说最难的是站在原地等</h3>
+            <p>与纪录片摄影师的对谈：为什么好的瞬间不是抓来的，而是等出来的。</p>
+            <div class="md-vcard-meta"><span class="md-avatar md-avatar-lilac">苏</span><span>苏栖</span><span>·</span><span>1.8万播放</span></div>
+            <div class="md-card-actions">
+              <button class="md-act js-like" data-count="530" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.4A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg><span class="js-like-num">530</span></button>
+              <button class="md-act md-act-save js-save" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg><span class="js-save-txt">收藏</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="md-vcard" data-tag="测评">
+          <div class="md-vcard-cover">
+            <span class="md-tag md-tag-gold">深度测评</span><span class="md-vcard-duration">15:48</span>
+            <svg viewBox="0 0 480 270" role="img" aria-label="封面：三台不同型号相机并列与参数标注线">
+              <rect width="480" height="270" fill="#202832"/>
+              <g fill="#2e3a48" stroke="#4a5b6e" stroke-width="2">
+                <rect x="42" y="96" width="108" height="70" rx="10"/>
+                <rect x="186" y="96" width="108" height="70" rx="10"/>
+                <rect x="330" y="96" width="108" height="70" rx="10"/>
+              </g>
+              <g fill="#ffd166" opacity=".8">
+                <circle cx="96" cy="131" r="20"/><circle cx="240" cy="131" r="20"/><circle cx="384" cy="131" r="20"/>
+              </g>
+              <g fill="#5fd3b3" opacity=".7"><rect x="60" y="76" width="72" height="8" rx="4"/><rect x="204" y="76" width="72" height="8" rx="4"/><rect x="348" y="76" width="72" height="8" rx="4"/></g>
+              <g stroke="#7f8a9e" stroke-width="1.5" stroke-dasharray="5 5"><path d="M42 208h396"/></g>
+              <g fill="#aab4c8" font-family="sans-serif" font-size="14"><text x="78" y="232">A 型</text><text x="222" y="232">B 型</text><text x="366" y="232">C 型</text></g>
+            </svg>
+            <span class="md-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg></span>
+          </div>
+          <div class="md-vcard-body">
+            <h3>三台相机横评：拍日常到底需要多贵的机器</h3>
+            <p>同一段街头、同一组光线下横向对比，结论可能和你想象的不太一样。</p>
+            <div class="md-vcard-meta"><span class="md-avatar md-avatar-mint">周</span><span>周见山</span><span>·</span><span>2.6万播放</span></div>
+            <div class="md-card-actions">
+              <button class="md-act js-like" data-count="880" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.4A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg><span class="js-like-num">880</span></button>
+              <button class="md-act md-act-save js-save" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg><span class="js-save-txt">收藏</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="md-vcard" data-tag="幕后">
+          <div class="md-vcard-cover">
+            <span class="md-tag">创作幕后</span><span class="md-vcard-duration">09:15</span>
+            <svg viewBox="0 0 480 270" role="img" aria-label="封面：片场灯光架、反光板与场记板">
+              <rect width="480" height="270" fill="#241d1a"/>
+              <rect x="0" y="206" width="480" height="64" fill="#171210"/>
+              <g stroke="#4a3a33" stroke-width="7"><path d="M96 206V72M96 72h84"/></g>
+              <circle cx="180" cy="72" r="22" fill="#ffd166" opacity=".85"/>
+              <path d="M180 72 L330 150 L300 200 Z" fill="#ffd166" opacity=".12"/>
+              <rect x="300" y="128" width="96" height="66" rx="4" fill="#3a2e26" stroke="#5b4436" stroke-width="3"/>
+              <g fill="#ff7a45"><rect x="300" y="142" width="96" height="8"/></g>
+              <g fill="#aab4c8" font-family="sans-serif" font-size="11"><text x="312" y="180">SCENE 07</text></g>
+              <rect x="40" y="176" width="120" height="30" rx="4" fill="#2f2620"/>
+            </svg>
+            <span class="md-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg></span>
+          </div>
+          <div class="md-vcard-body">
+            <h3>一条两分钟短片的片场：十个人的一天</h3>
+            <p>灯光、收音、场记、演员与盒饭，记录一次小成本拍摄的完整流程。</p>
+            <div class="md-vcard-meta"><span class="md-avatar md-avatar-rose">林</span><span>林致远</span><span>·</span><span>1.4万播放</span></div>
+            <div class="md-card-actions">
+              <button class="md-act js-like" data-count="476" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.4A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg><span class="js-like-num">476</span></button>
+              <button class="md-act md-act-save js-save" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg><span class="js-save-txt">收藏</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="md-vcard" data-tag="城市">
+          <div class="md-vcard-cover">
+            <span class="md-tag md-tag-mint">城市探索</span><span class="md-vcard-duration">11:22</span>
+            <svg viewBox="0 0 480 270" role="img" aria-label="封面：老巷子里的晾衣绳与斑驳墙面">
+              <rect width="480" height="270" fill="#2b2a24"/>
+              <rect x="0" y="0" width="180" height="270" fill="#39362c"/>
+              <rect x="300" y="0" width="180" height="270" fill="#332f27"/>
+              <rect x="180" y="0" width="120" height="270" fill="#4a4433"/>
+              <g fill="#ffd166" opacity=".5"><rect x="196" y="46" width="88" height="14" rx="3"/><rect x="196" y="82" width="70" height="14" rx="3"/></g>
+              <g stroke="#8f8672" stroke-width="2"><path d="M160 40h160M160 110h160"/></g>
+              <g fill="#ff9db0" opacity=".65"><rect x="176" y="48" width="26" height="52" rx="3"/><rect x="212" y="48" width="26" height="42" rx="3"/><rect x="248" y="48" width="26" height="56" rx="3"/></g>
+              <rect x="0" y="230" width="480" height="40" fill="#181712"/>
+            </svg>
+            <span class="md-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg></span>
+          </div>
+          <div class="md-vcard-body">
+            <h3>走完这条老巷用了四十分钟，遇到六户人家</h3>
+            <p>不写解说词的散步影像，只有拖鞋声、收音机和谁家在炖汤。</p>
+            <div class="md-vcard-meta"><span class="md-avatar md-avatar-sky">阿</span><span>阿栗</span><span>·</span><span>3.4万播放</span></div>
+            <div class="md-card-actions">
+              <button class="md-act js-like" data-count="1024" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.4A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg><span class="js-like-num">1024</span></button>
+              <button class="md-act md-act-save js-save" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg><span class="js-save-txt">收藏</span></button>
+            </div>
+          </div>
+        </article>
+
+        <article class="md-vcard" data-tag="教程">
+          <div class="md-vcard-cover">
+            <span class="md-tag">教程干货</span><span class="md-vcard-duration">08:40</span>
+            <svg viewBox="0 0 480 270" role="img" aria-label="封面：收音麦克风与声波图形示意">
+              <rect width="480" height="270" fill="#1d2a2a"/>
+              <circle cx="240" cy="132" r="86" fill="#25393a"/>
+              <rect x="222" y="70" width="36" height="76" rx="18" fill="#5fd3b3" opacity=".75"/>
+              <rect x="214" y="150" width="52" height="14" rx="7" fill="#3a5a58"/>
+              <path d="M240 164v34" stroke="#5fd3b3" stroke-width="5" opacity=".7"/>
+              <g stroke="#ffd166" stroke-width="3" stroke-opacity=".7" fill="none">
+                <path d="M96 132q18-30 36 0t36 0"/><path d="M312 132q18-30 36 0t36 0"/>
+              </g>
+              <g fill="#aab4c8" font-family="sans-serif" font-size="12"><text x="196" y="228">-18dB · 人声</text></g>
+            </svg>
+            <span class="md-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5l11 7-11 7z"/></svg></span>
+          </div>
+          <div class="md-vcard-body">
+            <h3>街头收音指南：让环境声成为你的第二主角</h3>
+            <p>四种常见场景的收音摆位方法，附设备清单与避坑经验。</p>
+            <div class="md-vcard-meta"><span class="md-avatar md-avatar-mint">程</span><span>程一木</span><span>·</span><span>9600播放</span></div>
+            <div class="md-card-actions">
+              <button class="md-act js-like" data-count="388" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.6-7-9.4A4.2 4.2 0 0 1 12 7a4.2 4.2 0 0 1 7 3.6C19 15.4 12 20 12 20z"/></svg><span class="js-like-num">388</span></button>
+              <button class="md-act md-act-save js-save" type="button" aria-pressed="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4h12v16l-6-4-6 4z"/></svg><span class="js-save-txt">收藏</span></button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 专题企划 ============ -->
+  <section class="md-section" id="topic">
+    <div class="md-wrap">
+      <div class="md-sec-head">
+        <div>
+          <h2>专题企划 <span>品牌原创</span></h2>
+          <p>麻豆不打烊每年策划多个原创影像专题，围绕一座城市、一个时段或一种生活状态持续更新，形成可被检索、被讨论的内容生态。</p>
+        </div>
+        <a class="md-sec-link" href="#join">提交选题提案</a>
+      </div>
+      <div class="md-topic-grid">
+        <article class="md-topic">
+          <svg viewBox="0 0 300 400" role="img" aria-label="专题封面：夜色中的城市天际线与窗口灯光">
+            <rect width="300" height="400" fill="#1c2333"/>
+            <circle cx="220" cy="80" r="34" fill="#ffd166" opacity=".35"/>
+            <g fill="#27324a"><rect x="20" y="180" width="60" height="180"/><rect x="92" y="140" width="54" height="220"/><rect x="158" y="200" width="66" height="160"/><rect x="236" y="160" width="46" height="200"/></g>
+            <g fill="#ffd166" opacity=".8"><rect x="30" y="200" width="9" height="11"/><rect x="50" y="200" width="9" height="11"/><rect x="30" y="230" width="9" height="11"/><rect x="104" y="160" width="9" height="11"/><rect x="122" y="190" width="9" height="11"/><rect x="170" y="220" width="9" height="11"/><rect x="248" y="180" width="9" height="11"/></g>
+            <rect x="0" y="330" width="300" height="70" fill="#121826"/>
+          </svg>
+          <div class="md-topic-inner">
+            <h3>不打烊的街</h3>
+            <p>记录城市在深夜与清晨之间的切换，十二位创作者、十二个街口。</p>
+            <span class="md-topic-state">更新至第 12 期</span>
+          </div>
+        </article>
+        <article class="md-topic">
+          <svg viewBox="0 0 300 400" role="img" aria-label="专题封面：厨房蒸汽与锅具特写">
+            <rect width="300" height="400" fill="#3a2620"/>
+            <circle cx="150" cy="220" r="110" fill="#4a2f26"/>
+            <ellipse cx="150" cy="270" rx="86" ry="20" fill="#2a1a15"/>
+            <path d="M96 220h108l-12 50H108z" fill="#7a5642"/>
+            <g fill="#ffe9cf" opacity=".4"><circle cx="130" cy="170" r="22"/><circle cx="168" cy="150" r="28"/><circle cx="196" cy="182" r="18"/></g>
+            <g fill="#ffd166" opacity=".55"><rect x="40" y="90" width="46" height="8" rx="4"/><rect x="206" y="72" width="56" height="8" rx="4"/></g>
+          </svg>
+          <div class="md-topic-inner">
+            <h3>一碗热汤的时间</h3>
+            <p>从备菜到下锅，用长镜头看食物如何把一家人重新聚到桌边。</p>
+            <span class="md-topic-state">更新至第 8 期</span>
+          </div>
+        </article>
+        <article class="md-topic">
+          <svg viewBox="0 0 300 400" role="img" aria-label="专题封面：毛线、剪刀与手作工具的桌面俯拍">
+            <rect width="300" height="400" fill="#2b3330"/>
+            <rect x="0" y="0" width="300" height="400" fill="#33403b"/>
+            <circle cx="110" cy="150" r="56" fill="#ff9db0" opacity=".55"/>
+            <circle cx="110" cy="150" r="30" fill="#33403b"/>
+            <g stroke="#d9e6df" stroke-width="3" stroke-opacity=".55" fill="none"><path d="M110 94c40 20 60 60 40 100"/><path d="M110 94c-40 20-60 60-40 100"/></g>
+            <rect x="190" y="120" width="12" height="120" rx="6" fill="#aab4c8" transform="rotate(18 196 180)"/>
+            <rect x="60" y="270" width="180" height="10" rx="5" fill="#8f8672"/>
+            <circle cx="220" cy="300" r="26" fill="#ffd166" opacity=".45"/>
+          </svg>
+          <div class="md-topic-inner">
+            <h3>慢手里的第三种可能</h3>
+            <p>手作人的失败品与重来，讲那些没被剪掉的过程。</p>
+            <span class="md-topic-state">更新至第 5 期</span>
+          </div>
+        </article>
+        <article class="md-topic">
+          <svg viewBox="0 0 300 400" role="img" aria-label="专题封面：公交车窗外流动的城市光影">
+            <rect width="300" height="400" fill="#1b2a34"/>
+            <rect x="30" y="60" width="240" height="200" rx="18" fill="#24404d"/>
+            <rect x="46" y="78" width="208" height="164" rx="10" fill="#2f5a68"/>
+            <g stroke="#ffd166" stroke-width="5" stroke-opacity=".65"><path d="M46 140h208M46 190h208"/></g>
+            <g fill="#ff7a45" opacity=".55"><circle cx="100" cy="116" r="12"/><circle cx="196" cy="166" r="9"/></g>
+            <rect x="0" y="300" width="300" height="100" fill="#14202a"/>
+            <g fill="#5fd3b3" opacity=".5"><rect x="60" y="330" width="60" height="10" rx="5"/><rect x="150" y="330" width="90" height="10" rx="5"/></g>
+          </svg>
+          <div class="md-topic-inner">
+            <h3>末班车之后</h3>
+            <p>夜间通勤者的十分钟纪录，把移动中的城市交给窗外。</p>
+            <span class="md-topic-state">更新至第 6 期</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 深度解析 ============ -->
+  <section class="md-section" id="story">
+    <div class="md-wrap">
+      <div class="md-deep">
+        <div>
+          <h2>关于麻豆不打烊：<span>一间不打烊的影像客厅</span></h2>
+          <p>麻豆不打烊起步于一间不足二十平方米的剪辑工作室。最初只是几个人把周末拍的街头片段剪在一起，传到社区里给朋友看。后来投稿的人越来越多，有出租车司机、有开早餐铺的夫妻、有刚毕业的摄影学生，也有做了十几年纪录片的老师傅。我们发现，大家想看的从来不是奇观，而是<b>被认真记录的普通生活</b>。</p>
+          <p>因此，麻豆不打烊把自己定位为一个<b>视频品牌官网与创作者社区的结合体</b>：一边是企业级的原创内容生产与出品，一边是面向所有爱好者的上传、交流与成长空间。我们坚持正版授权、高清呈现与专业的内容审核，也坚持在首页给新人留出位置——因为社区真正的活力来自多元的、还在成长中的创作者。</p>
+          <p>在内容方向上，我们长期深耕城市生活影像这一垂直领域：夜行、通勤、菜市场、老巷、加班的写字楼、周末的郊外。这些题材看似平常，但当我们用统一的影像语言去呈现，它们就构成了一个时代的日常生活档案。平台的编辑团队会为每个专题提供结构建议与技术支持，创作者则保留完整的署名与作品权益，这就是我们理解的<b>值得信赖的内容生态</b>。</p>
+          <p>麻豆不打烊也持续做三件事：其一，每年推出两到三个原创专题企划，由官方发布并开放共创；其二，为社区创作者提供剪辑、收音、调色方面的公开课与工具支持；其三，坚持用户至上的反馈机制，任何一条举报与建议都会在三个工作日内得到回应。我们相信，一个品牌能走多远，取决于它是否愿意陪着创作者一起成长。</p>
+        </div>
+        <div class="md-deep-list">
+          <div class="md-deep-item">
+            <i>01</i>
+            <div>
+              <h3>原创优先的内容标准</h3>
+              <p>所有进入焦点位的作品均经过原创核验与画质评估，社区内标注出处，尊重每一位创作者的署名权。</p>
+            </div>
+          </div>
+          <div class="md-deep-item">
+            <i>02</i>
+            <div>
+              <h3>城市生活的长期观察</h3>
+              <p>围绕夜行、通勤、市集、手艺等题材建立素材库，让零散的日常记录沉淀为可检索的城市影像档案。</p>
+            </div>
+          </div>
+          <div class="md-deep-item">
+            <i>03</i>
+            <div>
+              <h3>新人的第一条短片</h3>
+              <p>提供选题模板、剪辑清单与作品互评机制，帮助第一次上传的人也能得到具体的、友善的反馈。</p>
+            </div>
+          </div>
+          <div class="md-deep-item">
+            <i>04</i>
+            <div>
+              <h3>透明的社区规则</h3>
+              <p>审核标准、处理时效与申诉路径全部公开，举报与反馈由专人跟进，保持社区域内的真实与温暖。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 创作者 ============ -->
+  <section class="md-section" id="creators">
+    <div class="md-wrap">
+      <div class="md-sec-head">
+        <div>
+          <h2>创作者矩阵 <span>与你同频的人</span></h2>
+          <p>来自不同职业与生活半径的创作者，在麻豆不打烊持续上传作品。点击「查看主页」可了解他们的创作方向与更新节奏。</p>
+        </div>
+        <a class="md-sec-link" href="#join">申请入驻</a>
+      </div>
+      <div class="md-creator-grid">
+        <article class="md-creator">
+          <div class="md-creator-avatar" style="background:#ff9db0;">林</div>
+          <div class="md-creator-info">
+            <h3>林致远</h3>
+            <div class="md-field">纪录片导演 · 夜行题材</div>
+            <p>拍了九年街头，习惯在同一个路口站到天亮。代表作《凌晨四点的豆浆铺》《末班车之后》。</p>
+            <div class="md-creator-nums"><span><b>86</b>作品</span><span><b>4.2万</b>关注</span></div>
+            <a class="md-creator-more" href="#feature">查看主页</a>
+          </div>
+        </article>
+        <article class="md-creator">
+          <div class="md-creator-avatar" style="background:#5fd3b3;color:#08201a;">苏</div>
+          <div class="md-creator-info">
+            <h3>苏栖</h3>
+            <div class="md-field">观察记录 · 人物访谈</div>
+            <p>记者出身，擅长把一场对话剪成一段可呼吸的节奏，关注普通人的选择与犹豫。</p>
+            <div class="md-creator-nums"><span><b>52</b>作品</span><span><b>3.1万</b>关注</span></div>
+            <a class="md-creator-more" href="#feature">查看主页</a>
+          </div>
+        </article>
+        <article class="md-creator">
+          <div class="md-creator-avatar" style="background:#ffd166;">程</div>
+          <div class="md-creator-info">
+            <h3>程一木</h3>
+            <div class="md-field">教程干货 · 后期剪辑</div>
+            <p>影视后期从业者，做教程时喜欢先讲失败案例，再讲为什么这样剪会更顺。</p>
+            <div class="md-creator-nums"><span><b>121</b>作品</span><span><b>5.6万</b>关注</span></div>
+            <a class="md-creator-more" href="#flow">查看主页</a>
+          </div>
+        </article>
+        <article class="md-creator">
+          <div class="md-creator-avatar" style="background:#8fc6ff;color:#0d1f33;">阿</div>
+          <div class="md-creator-info">
+            <h3>阿栗</h3>
+            <div class="md-field">城市探索 · 生活切片</div>
+            <p>爱逛菜市场与旧货摊，镜头里常有讨价还价的声音和没吃完的半碗面。</p>
+            <div class="md-creator-nums"><span><b>64</b>作品</span><span><b>2.8万</b>关注</span></div>
+            <a class="md-creator-more" href="#flow">查看主页</a>
+          </div>
+        </article>
+        <article class="md-creator">
+          <div class="md-creator-avatar" style="background:#c4b0ff;color:#1e1433;">周</div>
+          <div class="md-creator-info">
+            <h3>周见山</h3>
+            <div class="md-field">户外活动 · 深度测评</div>
+            <p>常年跑城郊与山野，用同一套器材清单测试不同场景，结论常常干脆利落。</p>
+            <div class="md-creator-nums"><span><b>47</b>作品</span><span><b>2.2万</b>关注</span></div>
+            <a class="md-creator-more" href="#flow">查看主页</a>
+          </div>
+        </article>
+        <article class="md-creator">
+          <div class="md-creator-avatar" style="background:#ffb08f;">陶</div>
+          <div class="md-creator-info">
+            <h3>陶陶不晚</h3>
+            <div class="md-field">手作DIY · 慢生活</div>
+            <p>陶艺工作室主理人，作品里保留拉坯失败与重来的过程，讲手艺也讲耐心。</p>
+            <div class="md-creator-nums"><span><b>39</b>作品</span><span><b>1.9万</b>关注</span></div>
+            <a class="md-creator-more" href="#topic">查看主页</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 影像墙 + 评论 ============ -->
+  <section class="md-section" id="wall">
+    <div class="md-wrap">
+      <div class="md-sec-head">
+        <div>
+          <h2>社区影像墙 <span>由观众与创作者共同完成</span></h2>
+          <p>本月的投稿高光片段，覆盖清晨、正午与深夜。每一格背后都有一条完整短片，可在社区作品流中继续查找。</p>
+        </div>
+        <a class="md-sec-link" href="#join">上传你的片段</a>
+      </div>
+      <div class="md-wall">
+        <figure class="md-wall-item wide">
+          <svg viewBox="0 0 420 200" role="img" aria-label="影像墙作品：清晨河边慢跑者与晨雾">
+            <rect width="420" height="200" fill="#243640"/>
+            <rect x="0" y="126" width="420" height="74" fill="#1a2830"/>
+            <circle cx="330" cy="52" r="26" fill="#ffd166" opacity=".5"/>
+            <path d="M0 130 Q110 96 210 122 T420 112 V200 H0Z" fill="#2d4a4a"/>
+            <g fill="#0f181d"><circle cx="140" cy="118" r="10"/><rect x="130" y="128" width="20" height="34" rx="9"/></g>
+            <g fill="#5fd3b3" opacity=".25"><ellipse cx="200" cy="180" rx="120" ry="16"/></g>
+          </svg>
+          <span>清晨六点的河堤，跑步的人比鸟起得早</span>
+        </figure>
+        <figure class="md-wall-item">
+          <svg viewBox="0 0 220 200" role="img" aria-label="影像墙作品：窗台上的绿植与半杯水">
+            <rect width="220" height="200" fill="#2f3a2f"/>
+            <rect x="0" y="140" width="220" height="60" fill="#24301f"/>
+            <g fill="#5fd3b3"><ellipse cx="76" cy="104" rx="18" ry="30"/><ellipse cx="102" cy="118" rx="14" ry="22"/><ellipse cx="56" cy="122" rx="12" ry="20"/></g>
+            <rect x="62" y="132" width="42" height="30" rx="4" fill="#a3512c"/>
+            <rect x="140" y="118" width="34" height="44" rx="4" fill="#8fc6ff" opacity=".6"/>
+            <rect x="140" y="138" width="34" height="24" fill="#8fc6ff" opacity=".85"/>
+          </svg>
+          <span>把窗台收拾干净，就算过完一天</span>
+        </figure>
+        <figure class="md-wall-item tall">
+          <svg viewBox="0 0 220 420" role="img" aria-label="影像墙作品：雨夜路灯下的伞与积水中倒影">
+            <rect width="220" height="420" fill="#16222c"/>
+            <rect x="0" y="300" width="220" height="120" fill="#101a22"/>
+            <rect x="96" y="90" width="8" height="220" fill="#3a5060"/>
+            <circle cx="100" cy="90" r="26" fill="#ffd166" opacity=".55"/>
+            <path d="M100 90 L40 300 H200 Z" fill="#ffd166" opacity=".1"/>
+            <path d="M50 244q50-44 100 0z" fill="#ff7a45" opacity=".7"/>
+            <rect x="96" y="244" width="4" height="56" fill="#aab4c8"/>
+            <g stroke="#8fc6ff" stroke-opacity=".45" stroke-width="1.5"><path d="M30 0l-16 300M86 0L70 300M150 0l-16 300M200 0l-14 300"/></g>
+            <ellipse cx="112" cy="346" rx="70" ry="12" fill="#ffd166" opacity=".18"/>
+          </svg>
+          <span>雨夜的伞总会偏向别人那一侧</span>
+        </figure>
+        <figure class="md-wall-item">
+          <svg viewBox="0 0 220 200" role="img" aria-label="影像墙作品：面包店橱窗与出炉的面包">
+            <rect width="220" height="200" fill="#3a2a1f"/>
+            <rect x="26" y="46" width="168" height="108" rx="6" fill="#4d3826"/>
+            <g fill="#d9a273"><ellipse cx="80" cy="110" rx="30" ry="18"/><ellipse cx="146" cy="112" rx="26" ry="16"/></g>
+            <g fill="#8a5c3c"><ellipse cx="80" cy="100" rx="28" ry="14"/><ellipse cx="146" cy="104" rx="24" ry="12"/></g>
+            <rect x="0" y="154" width="220" height="46" fill="#241a12"/>
+          </svg>
+          <span>下午三点的第一炉，香气先到门口</span>
+        </figure>
+        <figure class="md-wall-item wide">
+          <svg viewBox="0 0 420 200" role="img" aria-label="影像墙作品：夜市摊位上方成串的灯泡">
+            <rect width="420" height="200" fill="#1d1f2a"/>
+            <rect x="0" y="150" width="420" height="50" fill="#15171f"/>
+            <g stroke="#4a4a5c" stroke-width="2" fill="none"><path d="M0 40 Q210 90 420 40"/></g>
+            <g fill="#ffd166">
+              <circle cx="50" cy="58" r="7"/><circle cx="110" cy="70" r="7"/><circle cx="170" cy="78" r="7"/>
+              <circle cx="230" cy="80" r="7"/><circle cx="290" cy="74" r="7"/><circle cx="350" cy="62" r="7"/>
+            </g>
+            <g fill="#ff7a45" opacity=".65"><rect x="60" y="120" width="60" height="26" rx="4"/><rect x="150" y="126" width="70" height="22" rx="4"/><rect x="250" y="118" width="58" height="28" rx="4"/></g>
+            <g fill="#5fd3b3" opacity=".5"><rect x="100" y="146" width="40" height="6" rx="3"/><rect x="220" y="148" width="52" height="6" rx="3"/></g>
+          </svg>
+          <span>夜市开摊前的十分钟，灯先亮起来</span>
+        </figure>
+        <figure class="md-wall-item">
+          <svg viewBox="0 0 220 200" role="img" aria-label="影像墙作品：猫在窗台打盹的午后">
+            <rect width="220" height="200" fill="#3a3030"/>
+            <rect x="0" y="130" width="220" height="70" fill="#2a2222"/>
+            <ellipse cx="112" cy="126" rx="52" ry="26" fill="#d9a273"/>
+            <circle cx="86" cy="104" r="26" fill="#d9a273"/>
+            <path d="M66 88l-8-22 20 12zM106 88l8-22-20 12z" fill="#d9a273"/>
+            <g fill="#2a2222"><circle cx="80" cy="104" r="3"/><circle cx="96" cy="104" r="3"/></g>
+            <path d="M160 130q22-8 34 6" stroke="#d9a273" stroke-width="8" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span>它占据了窗台，也占据了整个下午</span>
+        </figure>
+      </div>
+
+      <div class="md-sec-head" style="margin-top:56px;">
+        <div>
+          <h2>他们这样说 <span>真实口碑</span></h2>
+          <p>来自社区成员的公开留言与反馈，我们原样呈现，也欢迎你写下自己的感受。</p>
+        </div>
+        <button class="md-btn md-btn-ghost" data-open="feedback" type="button">我有话说</button>
+      </div>
+      <div class="md-comment-grid">
+        <article class="md-comment">
+          <div class="md-comment-head"><span class="md-avatar md-avatar-sky">陈</span><div><strong>陈默</strong><small>关注 1 年 3 个月</small></div></div>
+          <p>最开始是被一支豆浆铺的短片留住的。没有配乐，没有旁白，就听油锅和脚步。看完我去楼下买了碗豆腐脑，突然觉得日子也没那么糟。</p>
+          <div class="md-comment-foot"><span>赞 61</span><span>上个月</span></div>
+        </article>
+        <article class="md-comment">
+          <div class="md-comment-head"><span class="md-avatar md-avatar-mint">夏</span><div><strong>夏小满</strong><small>创作者 · 加入 8 个月</small></div></div>
+          <p>第一次投稿的时候很紧张，怕拍得太业余。结果编辑给我写了三百多字的修改建议，还推荐了收音教程。第二支片子就有了一千多播放，这个地方确实在陪新人成长。</p>
+          <div class="md-comment-foot"><span>赞 48</span><span>2 周前</span></div>
+        </article>
+        <article class="md-comment">
+          <div class="md-comment-head"><span class="md-avatar md-avatar-gold" style="background:#ffd166;">老</span><div><strong>老路</strong><small>关注 2 年</small></div></div>
+          <p>我是开出租的，晚上等客的时候就刷作品流。很多片子讲的都是我每天经过的路口，以前没觉得好看，现在会留意一下窗外。收藏夹里存了四十多条。</p>
+          <div class="md-comment-foot"><span>赞 37</span><span>3 天前</span></div>
+        </article>
+        <article class="md-comment">
+          <div class="md-comment-head"><span class="md-avatar md-avatar-lilac">池</span><div><strong>池一</strong><small>关注 6 个月</small></div></div>
+          <p>教程区真的很扎实，尤其是剪辑那几期，讲的不是软件按钮，而是为什么这么剪。唯一希望是专题更新再快一点，第十二期我已经看了两遍。</p>
+          <div class="md-comment-foot"><span>赞 29</span><span>5 天前</span></div>
+        </article>
+        <article class="md-comment">
+          <div class="md-comment-head"><span class="md-avatar md-avatar-rose">林</span><div><strong>林间</strong><small>关注 1 年 8 个月</small></div></div>
+          <p>孩子今年五岁，我每周挑一条治愈影像和他一起看。他最喜欢那只窗台上的猫，看完会跑去阳台找自己家的。这大概就是影像能带来的东西。</p>
+          <div class="md-comment-foot"><span>赞 55</span><span>1 周前</span></div>
+        </article>
+        <article class="md-comment">
+          <div class="md-comment-head"><span class="md-avatar" style="background:#8fc6ff;color:#0d1f33;">余</span><div><strong>余响</strong><small>关注 4 个月</small></div></div>
+          <p>反馈过一次播放卡顿的问题，第二天收到回复并说已优化。虽然只是小事，但能感觉到有人在认真维护这个平台，不像那种只挂个牌子就不管的站。</p>
+          <div class="md-comment-foot"><span>赞 22</span><span>2 周前</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 企业动态 + 合作 ============ -->
+  <section class="md-section" id="news">
+    <div class="md-wrap">
+      <div class="md-sec-head">
+        <div>
+          <h2>企业动态 <span>官方发布</span></h2>
+          <p>麻豆不打烊的出品进度、社区规则调整与合作信息，均在此处同步更新。</p>
+        </div>
+        <a class="md-sec-link" href="#faq">查看帮助中心</a>
+      </div>
+      <div class="md-two-col">
+        <div class="md-timeline">
+          <div class="md-timeline-item">
+            <time>2026.11.16</time>
+            <h3>年度专题「不打烊的街」第 12 期上线</h3>
+            <p>本期聚焦城北旧工业区的夜间班次，由三位社区创作者联合拍摄，素材总时长超过 40 小时。专题页已同步更新幕后花絮与收音笔记。</p>
+          </div>
+          <div class="md-timeline-item">
+            <time>2026.11.08</time>
+            <h3>创作者扶持计划第三期开放报名</h3>
+            <p>面向加入社区不满一年的创作者，提供剪辑指导、设备短期借用与专题共创名额。报名截止至本月底，结果将在官方动态中公示。</p>
+          </div>
+          <div class="md-timeline-item">
+            <time>2026.10.27</time>
+            <h3>社区上传规范更新说明</h3>
+            <p>新增对授权素材的标注要求，并优化了作品申诉流程。规则调整的完整说明与常见问题已整理成文档，可在帮助中心查看。</p>
+          </div>
+          <div class="md-timeline-item">
+            <time>2026.10.12</time>
+            <h3>公开课上线：街头收音与调色基础</h3>
+            <p>由平台编辑与资深创作者共同录制，共六节，全部免费公开。课程配套的素材清单与练习作业可在作品页下载。</p>
+          </div>
+          <div class="md-timeline-item">
+            <time>2026.09.30</time>
+            <h3>本月社区数据：投稿量与完播率双增长</h3>
+            <p>九月共收到投稿 684 条，审核通过 512 条；专题内容的平均完播率较上月提升 11%。感谢每一位创作者的持续投入。</p>
+          </div>
+        </div>
+        <div>
+          <h4 style="font-size:14px;letter-spacing:.1em;color:var(--md-mint);margin-bottom:16px;">合作机构与共创伙伴</h4>
+          <div class="md-partners">
+            <div class="md-partner"><b>城南影像社</b>长期共创伙伴</div>
+            <div class="md-partner"><b>夜航书店</b>专题放映合作</div>
+            <div class="md-partner"><b>一间陶艺</b>手作内容共建</div>
+            <div class="md-partner"><b>旧站台唱片</b>配乐授权支持</div>
+            <div class="md-partner"><b>青禾市集</b>线下活动合作</div>
+            <div class="md-partner"><b>未晚工作室</b>后期技术协作</div>
+          </div>
+          <p style="font-size:13px;color:var(--md-ink-soft);margin-top:18px;line-height:1.8;">我们希望与更多在地机构、独立空间和内容团队合作，围绕城市生活影像展开共创。合作需求可发送至页面底部联系方式，我们会在三个工作日内回复。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="md-section" id="faq">
+    <div class="md-wrap">
+      <div class="md-sec-head">
+        <div>
+          <h2>帮助中心 <span>常见问题</span></h2>
+          <p>关于投稿、审核、版权与账号的常见疑问，我们整理了以下说明。若仍有不清楚的地方，可通过页面底部的方式联系我们。</p>
+        </div>
+      </div>
+      <div class="md-faq">
+        <details open>
+          <summary>第一次投稿，对设备和时长有什么要求？</summary>
+          <p>手机拍摄同样欢迎。我们更看重内容是否有真实的生活观察，而不是器材规格。建议时长在 1 至 20 分钟之间，画面横竖不限，但需保证收音清晰、画面稳定。若使用第三方音乐或素材，请在上传时标注来源并确认已获得授权，未标注的作品会进入人工复核流程。</p>
+        </details>
+        <details>
+          <summary>作品提交后多久能通过审核？</summary>
+          <p>常规审核时效为 1 至 3 个工作日。遇到专题征集或活动期间投稿量较大时，可能延长至 5 个工作日。审核结果会通过站内通知发送，若未通过，我们会说明具体原因并给出修改建议，修改后可重新提交，不影响账号信用。</p>
+        </details>
+        <details>
+          <summary>作品的版权归谁？平台会如何使用？</summary>
+          <p>作品版权归创作者本人所有。上传即表示你授权麻豆不打烊在官方网站、专题页及官方社交账号中做非商业性的展示与推荐，并保留完整署名。若涉及商业合作或外部授权，我们会在使用前单独与你沟通并签署授权说明，不会默认替你做决定。</p>
+        </details>
+        <details>
+          <summary>如何加入创作者扶持计划？</summary>
+          <p>在个人主页提交入驻申请，填写创作方向、过往作品与更新计划即可。我们更关注持续更新的意愿和内容方向与社区的匹配度。入选后会获得剪辑指导、专题共创名额以及部分设备与素材的短期支持，计划每季度开放一次报名。</p>
+        </details>
+        <details>
+          <summary>发现作品疑似侵权或不当内容，怎么处理？</summary>
+          <p>可在作品页点击反馈按钮提交说明，或通过页面底部的联系邮箱发送相关链接与材料。我们承诺在三个工作日内响应，核实后会采取下架、标注来源或要求补充授权等处理，并将结果告知举报人。对于恶意的重复举报，我们会做记录与限制。</p>
+        </details>
+        <details>
+          <summary>专题企划可以自己提案吗？</summary>
+          <p>可以。我们每年会公开征集专题提案，也接受随时提交的想法。提案建议包含选题背景、拍摄计划、预期集数与呈现方式。若选题与平台方向匹配，编辑团队会与你一起完善结构，并提供部分制作资源。提案入口在页面底部的联系区域。</p>
+        </details>
+        <details>
+          <summary>网站内容可以转载吗？</summary>
+          <p>欢迎在注明作者与出处的前提下分享作品链接。若需整篇转载或用于商业场景，请先取得创作者与平台的书面许可。我们鼓励合理的引用与讨论，但反对未标注来源的搬运，这也是维护社区创作者权益的底线。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 投稿 / 联系 ============ -->
+  <section class="md-section" id="join">
+    <div class="md-wrap">
+      <div class="md-join">
+        <div>
+          <h2>把你想拍的那条街，<span>交给更多人看见</span></h2>
+          <p>无论你手里是一台旧手机还是一整套设备，只要你有想记录的日常，麻豆不打烊都愿意留一个位置。上传作品、参与专题、报名扶持计划，或者只是告诉我们你最近在关注什么——每一条来信我们都会读。</p>
+          <div class="md-join-actions">
+            <button class="md-btn md-btn-amber" data-open="join" type="button">提交投稿信息</button>
+            <button class="md-btn md-btn-ghost" data-open="share" type="button">分享给朋友</button>
+            <button class="md-btn md-btn-ghost" data-open="feedback" type="button">反馈与建议</button>
+          </div>
+        </div>
+        <div class="md-contact-card">
+          <h3>官方联系渠道</h3>
+          <ul>
+            <li><span>投稿与合作</span><b>submit@madou.example</b></li>
+            <li><span>媒体与品牌</span><b>media@madou.example</b></li>
+            <li><span>内容反馈</span><b>feedback@madou.example</b></li>
+            <li><span>工作时间</span><b>周一至周五 10:00–19:00</b></li>
+            <li><span>办公地址</span><b>城南创意园 3 号楼 2 层</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="md-footer">
+  <div class="md-wrap">
+    <div class="md-footer-top">
+      <div>
+        <div class="md-brand" style="margin-bottom:14px;">
+          <span class="md-brand-mark">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="8" stroke="#1d1410" stroke-width="2"/><path d="M10 8.5l6 3.5-6 3.5z" fill="#1d1410"/></svg>
+          </span>
+          <span>
+            <span class="md-brand-name">麻豆不打烊</span>
+            <span class="md-brand-sub">MADOU NEVER OFF</span>
+          </span>
+        </div>
+        <p>麻豆不打烊官方网站。一家专注城市生活影像的原创内容品牌与视频社区，持续运营，深耕垂直领域，与创作者共同构建值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容</h4>
+        <ul>
+          <li><a href="#feature">焦点影像</a></li>
+          <li><a href="#flow">社区作品流</a></li>
+          <li><a href="#topic">专题企划</a></li>
+          <li><a href="#wall">社区影像墙</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>品牌</h4>
+        <ul>
+          <li><a href="#story">品牌故事</a></li>
+          <li><a href="#creators">创作者矩阵</a></li>
+          <li><a href="#news">企业动态</a></li>
+          <li><a href="#join">联系我们</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>帮助</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#join">投稿入口</a></li>
+          <li><a href="#news">社区规范</a></li>
+          <li><a href="#join">合作洽谈</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="md-footer-bottom">
+      <span>© 2026 麻豆不打烊 官方网站 · 版权所有 · 持续运营中</span>
+      <span>内容均为原创或经正版授权 · 高清呈现 · 品质优先</span>
+    </div>
+  </div>
+</footer>
+
+<div class="md-toast" id="mdToast" role="status" aria-live="polite"></div>
+<button class="md-top" id="mdTop" type="button" aria-label="回到顶部">
+  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 19V6M6 12l6-6 6 6"/></svg>
+</button>
+
+<div class="md-modal" id="mdModal" role="dialog" aria-modal="true" aria-labelledby="mdModalTitle">
+  <div class="md-modal-box">
+    <h3 id="mdModalTitle">投稿信息</h3>
+    <p id="mdModalDesc">填写下方信息后，编辑部会通过站内通知与你联系。请确保作品为原创或已获得授权。</p>
+    <div id="mdModalBody">
+      <div class="md-form">
+        <input type="text" placeholder="你的昵称" aria-label="昵称">
+        <input type="text" placeholder="作品标题 / 选题方向" aria-label="作品标题或选题方向">
+        <textarea rows="3" placeholder="简单描述一下你的作品或想法" aria-label="作品描述"></textarea>
+      </div>
+    </div>
+    <div class="md-modal-foot">
+      <button class="md-btn md-btn-ghost" data-close type="button">取消</button>
+      <button class="md-btn md-btn-amber" id="mdModalSubmit" type="button">确认提交</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('mdBurger');
+  var mobileNav = document.getElementById('mdMobileNav');
+  if (burger && mobileNav) {
+    burger.addEventListener('click', function(){
+      var open = mobileNav.classList.toggle('on');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    mobileNav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A') {
+        mobileNav.classList.remove('on');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('mdToast');
+  var toastTimer = null;
+  function showToast(msg){
+    if (!toast) return;
+    toast.textContent = msg;
+    toast.classList.add('on');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('on'); }, 2200);
+  }
+
+  /* ---------- 搜索提示 ---------- */
+  var searchInput = document.getElementById('mdSearchInput');
+  var searchHint = document.getElementById('mdSearchHint');
+  var keywordPool = ['夜行地图','豆浆铺','街头收音','手作陶艺','末班车','菜市场','创作者扶持','专题企划','城市探索','剪辑教程'];
+  if (searchInput && searchHint) {
+    function renderHint(){
+      var v = searchInput.value.trim();
+      if (!v) { searchHint.classList.remove('on'); searchHint.innerHTML = ''; return; }
+      var hits = keywordPool.filter(function(k){ return k.indexOf(v) > -1; });
+      if (!hits.length) hits = keywordPool.slice(0, 4);
+      searchHint.innerHTML = '匹配内容：<b>' + hits.slice(0, 4).join('</b> · <b>') + '</b>';
+      searchHint.classList.add('on');
+    }
+    searchInput.addEventListener('input', renderHint);
+    searchInput.addEventListener('focus', renderHint);
+    searchInput.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        var v = searchInput.value.trim();
+        showToast(v ? '正在按「' + v + '」筛选社区作品' : '请输入想查找的作品或创作者');
+        searchHint.classList.remove('on');
+      }
+    });
+    document.addEventListener('click', function(e){
+      if (!searchHint.contains(e.target) && e.target !== searchInput) searchHint.classList.remove('on');
+    });
+  }
+
+  /* ---------- 标签筛选 ---------- */
+  var filterRow = document.getElementById('mdFilterRow');
+  var flow = document.getElementById('mdVideoFlow');
+  if (filterRow && flow) {
+    filterRow.addEventListener('click', function(e){
+      var btn = e.target.closest('.md-chip');
+      if (!btn) return;
+      Array.prototype.forEach.call(filterRow.querySelectorAll('.md-chip'), function(c){ c.classList.remove('on'); });
+      btn.classList.add('on');
+      var f = btn.getAttribute('data-filter');
+      Array.prototype.forEach.call(flow.querySelectorAll('.md-vcard'), function(card){
+        var tag = card.getAttribute('data-tag');
+        var show = (f === 'all' || tag === f);
+        card.style.display = show ? '' : 'none';
+      });
+      showToast(f === 'all' ? '已显示全部热门作品' : '已筛选：' + btn.textContent);
+    });
+  }
+
+  /* ---------- 点赞 ---------- */
+  document.addEventListener('click', function(e){
+    var like = e.target.closest('.js-like');
+    if (!like) return;
+    var numEl = like.querySelector('.js-like-num');
+    var base = parseInt(like.getAttribute('data-count'), 10) || 0;
+    var on = like.classList.toggle('on');
+    like.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (numEl) numEl.textContent = on ? base + 1 : base;
+    showToast(on ? '已点赞，感谢你的支持' : '已取消点赞');
+  });
+
+  /* ---------- 收藏 ---------- */
+  document.addEventListener('click', function(e){
+    var save = e.target.closest('.js-save');
+    if (!save) return;
+    var txt = save.querySelector('.js-save-txt');
+    var on = save.classList.toggle('on');
+    save.setAttribute('aria-pressed', on ? 'true' : 'false');
+    if (txt) txt.textContent = on ? '已收藏' : '收藏';
+    showToast(on ? '已加入收藏夹' : '已取消收藏');
+  });
+
+  /* ---------- 复制链接 ---------- */
+  document.addEventListener('click', function(e){
+    var copy = e.target.closest('.js-copy');
+    if (!copy) return;
+    var link = '麻豆不打烊 · 焦点影像：凌晨四点的豆浆铺';
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(link).then(function(){
+        showToast('链接已复制，可粘贴分享');
+      }).catch(function(){
+        showToast('已生成分享链接，请手动复制');
+      });
+    } else {
+      showToast('已生成分享链接，请手动复制');
+    }
+  });
+
+  /* ---------- 弹窗 ---------- */
+  var modal = document.getElementById('mdModal');
+  var modalTitle = document.getElementById('mdModalTitle');
+  var modalDesc = document.getElementById('mdModalDesc');
+  var modalBody = document.getElementById('mdModalBody');
+  var modalSubmit = document.getElementById('mdModalSubmit');
+
+  var modalConfig = {
+    join: {
+      title: '提交投稿信息',
+      desc: '填写下方信息后，编辑部会通过站内通知与你联系。请确保作品为原创或已获得授权。',
+      form: '<div class="md-form"><input type="text" placeholder="你的昵称" aria-label="昵称"><input type="text" placeholder="作品标题 / 选题方向" aria-label="作品标题或选题方向"><textarea rows="3" placeholder="简单描述一下你的作品或想法" aria-label="作品描述"></textarea></div>',
+      ok: '确认提交'
+    },
+    share: {
+      title: '分享麻豆不打烊',
+      desc: '把这段城市影像分享给同样爱看日常的朋友。选择下方任一渠道即可。',
+      form: '<div class="md-share-row"><button class="md-share-btn" type="button">微信</button><button class="md-share-btn" type="button">微博</button><button class="md-share-btn" type="button">QQ</button><button class="md-share-btn" type="button">复制链接</button></div>',
+      ok: '完成'
+    },
+    feedback: {
+      title: '反馈与建议',
+      desc: '我们认真阅读每一条反馈，并承诺在三个工作日内响应。请描述具体页面与问题。',
+      form: '<div class="md-form"><input type="text" placeholder="你的称呼" aria-label="称呼"><textarea rows="3" placeholder="想反馈的问题或建议" aria-label="反馈内容"></textarea></div>',
+      ok: '发送反馈'
+    }
+  };
+
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-open]');
+    if (opener) {
+      var key = opener.getAttribute('data-open');
+      var cfg = modalConfig[key] || modalConfig.join;
+      modalTitle.textContent = cfg.title;
+      modalDesc.textContent = cfg.desc;
+      modalBody.innerHTML = cfg.form;
+      modalSubmit.textContent = cfg.ok;
+      modal.classList.add('on');
+      modal.setAttribute('data-mode', key);
+      return;
+    }
+    if (e.target.closest('[data-close]') || e.target === modal) {
+      modal.classList.remove('on');
+      return;
+    }
+    if (e.target.classList.contains('md-share-btn')) {
+      showToast('已选择「' + e.target.textContent + '」分享渠道');
+    }
+  });
+
+  if (modalSubmit) {
+    modalSubmit.addEventListener('click', function(){
+      var mode = modal.getAttribute('data-mode');
+      if (mode === 'share') {
+        showToast('感谢分享，愿你看到更多好影像');
+      } else if (mode === 'feedback') {
+        showToast('反馈已记录，我们会尽快回复');
+      } else {
+        showToast('投稿信息已提交，请留意站内通知');
+      }
+      modal.classList.remove('on');
+    });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape' && modal.classList.contains('on')) modal.classList.remove('on');
+  });
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('mdTop');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 620) topBtn.classList.add('on');
+    else topBtn.classList.remove('on');
+  }, { passive: true });
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  /* ---------- 滚动锚点偏移 ---------- */
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var target = document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      var sticky = document.querySelector('.md-sticky');
+      var offset = sticky ? sticky.offsetHeight + 10 : 10;
+      var y = target.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+})();
+</script>
+</body>
+            </html>
